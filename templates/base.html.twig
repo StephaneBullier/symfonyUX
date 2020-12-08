@@ -7,7 +7,10 @@
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
     </head>
-    <body data-controller="@symfony/ux-swup/swup">
+    <body
+         data-controller="@symfony/ux-swup/swup"
+         data-animate-history-browsing="data-animate-history-browsing"
+    >
         {% include 'header.html.twig' %}
         <main id="swup">
         {% block body %}{% endblock %}
