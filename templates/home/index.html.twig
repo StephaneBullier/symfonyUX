@@ -5,9 +5,10 @@
 {% block body %}
     <h1>Test du nouveau système Symfony UX</h1>
 
-    <h2>Basique utilisation du frameword Stimulus</h2>
+    <h2>Basique utilisation du framework Stimulus</h2>
     <div data-controller="hello">
-        <input data-hello-target="name" type="text">
+        <label for="name">Votre nom</label>
+        <input data-hello-target="name" id="name" type="text">
         <button data-action="click->hello#greet">Greet</button>
         <span data-hello-target="output"></span>
     </div>
