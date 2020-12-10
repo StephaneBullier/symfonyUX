@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello FiltersController!{% endblock %}
+
+{% block body %}
+<ul>
+    <li>abs : retourne la valeur absolue {% set number = -5 %} {{ number|abs }}</li>
+    <li>batch</li>
+    <li>capitalize</li>
+    <li>column</li>
+    <li>convert_encoding</li>
+    <li>country_name : {{ 'FR'|country_name }}</li>
+    <li>currency_name : {{ 'JPY'|currency_name }}</li>
+    <li>currency_symbol : {{ 'EUR'|currency_symbol }}</li>
+    <li>data_uri : {{ '<b>foobar</b>'|data_uri(mime="text/html", parameters={charset: "ascii"}) }}</li>
+    <li>date: {{ "now"|date("d/m/Y", "Australia/Darwin") }}</li>
+    <li>date_modify : {{ "now"|date_modify("+1 day")|date("d/m/Y") }}</li>
+    <li>default</li>
+    <li>escape</li>
+    <li>filter</li>
+    <li>first : retourne le premier élément</li>
+    <li>format</li>
+    <li>format_currency</li>
+    <li>format_date : {{ "now"|format_date('short') }}</li>
+    <li>format_datetime : {{ '2019-08-07 23:39:12'|format_datetime('full', 'full') }}</li>
+    <li>format_number : {{ '12'|format_number({lenient_parse: 2}) }}</li>
+    <li>format_time</li>
+    <li>html_to_markdown</li>
+    <li>inline_css</li>
+    <li>inky_to_html</li>
+    <li>join</li>
+    <li>json_encode()</li>
+    <li>keys</li>
+    <li>language_name</li>
+    <li>last</li>
+    <li>length</li>
+    <li>locale_name : {{ 'de'|locale_name }}</li>
+    <li>lower</li>
+    <li>map</li>
+    <li>markdown_to_html</li>
+    <li>merge</li>
+    <li>nl2br</li>
+    <li>number_format : {{ 1200.35|number_format(2, '.', ' ') }}</li>
+    <li>raw</li>
+    <li>reduce</li>
+    <li>replace</li>
+    <li>reverse</li>
+    <li>round</li>
+    <li>slice</li>
+    <li>sort</li>
+    <li>spaceless</li>
+    <li>split</li>
+    <li>striptags</li>
+    <li>timezone_name</li>
+    <li>title</li>
+    <li>trim</li>
+    <li>u</li>
+    <li>uppper</li>
+    <li>url_encode</li>
+</ul>
+{% endblock %}
