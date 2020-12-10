@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html class="h-100" lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Site pour tester bootstrap 5{% endblock %}</title>
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
     </head>
     <body
+         class="d-flex flex-column h-100"
          data-controller="@symfony/ux-swup/swup"
          data-animate-history-browsing="data-animate-history-browsing"
     >
         {% include 'header.html.twig' %}
-        <main id="swup">
+        <main id="swup" role="main" class="container pt-5 mt-5">
         {% block body %}{% endblock %}
         </main>
         {% block javascripts %}
