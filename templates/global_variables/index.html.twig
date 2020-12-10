@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Variables globales{% endblock %}
+
+{% block body %}
+    <h2>Variables globales</h2>
+    <ul>
+        <li>_self : référence le nom de la template courante => <code>{{ _self }}</code></li>
+        <li>_context : référence le context courant</li>
+        <li>_charset : référence le charset courant => <code>{{ _charset }}</code></li>
+    </ul>
+{% endblock %}
