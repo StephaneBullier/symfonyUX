@@ -3,4 +3,32 @@
 {% block title %}Boutique{% endblock %}
 
 {% block body %}
+    <div data-controller="hello">
+        <input data-hello-target="name" type="text">
+        <button data-action="click->hello#greet">Greet</button>
+    </div>
+
+    <div class="mt-3" data-controller="clipboard">
+        PIN: <input data-clipboard-target="source" type="text" value="1234" readonly>
+        <button data-action="clipboard#copy">Copy to clipboard</button>
+    </div>
+
+    <div class="mt-4" data-controller="clipboard">
+        PIN: <input data-clipboard-target="source" type="text" value="3737" readonly>
+        <button data-action="clipboard#copy" class="clipboard-button">Copy to Clipboard</button>
+    </div>
+    <div class="mt-4" data-controller="clipboard">
+        PIN: <textarea data-clipboard-target="source" readonly>3789</textarea>
+        <a href="#" data-action="clipboard#copy" class="clipboard-button">Copy to Clipboard</a>
+    </div>
+
+    <div data-controller="slideshow" data-slideshow-index-value="1">
+        <button data-action="slideshow#previous"> ← </button>
+        <button data-action="slideshow#next"> → </button>
+        <div data-slideshow-target="slide">🐵</div>
+        <div data-slideshow-target="slide">🙈</div>
+        <div data-slideshow-target="slide">🙉</div>
+        <div data-slideshow-target="slide">🙊</div>
+    </div>
+
 {% endblock %}
