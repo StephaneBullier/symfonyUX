@@ -23,8 +23,10 @@ class ChartController extends AbstractController
             'datasets' => [
                 [
                     'label' => 'My First dataset',
-                    'backgroundColor' => 'rgba(54, 162, 235, 0.2)',
+                    'fill' => false,
                     'borderColor' => 'rgb(255, 99, 132)',
+                    'borderCapStyle' => 'round',
+                    'borderDash' => [5, 15, 25],
                     'data' => [0, 10, 5, 2, 20, 30, 45],
                 ],
             ],
