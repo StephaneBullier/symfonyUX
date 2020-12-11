@@ -3,5 +3,54 @@
 {% block title %}Nous contacter{% endblock %}
 
 {% block body %}
-<h2>Formulaire de contact</h2>
+    <h2>Contactez nous</h2>
+    <div class="row">
+        <div class="col-md-8">
+            {# {{ form(contactForm) }}#}
+           {{ form_start(contactForm) }}
+            <div class="mb-3">
+                {{ form_label(contactForm.name, 'Votre nom', { 'label_attr': {'class': 'form-label'} }) }}
+                {{ form_widget(contactForm.name, { 'attr': {'class': 'form-control'} }) }}
+            </div>
+            <div class="mb-3">
+                {{ form_label(contactForm.subject, 'Votre sujet', { 'label_attr': {'class': 'form-label'} }) }}
+                {{ form_widget(contactForm.subject, { 'attr': {'class': 'form-control'} }) }}
+            </div>
+            <div class="mb-3">
+                {{ form_label(contactForm.email, 'Votre courriel (obligatoire)', { 'label_attr': {'class': 'form-label'} }) }}
+                {% if form_errors(contactForm.email) %}{% set error="is-invalid" %}{% endif %}
+                <div class="input-group has-validation">
+                    <input type="email" id="contact_form_email" name="contact_form[email]" required="required" class="form-control {{
+                    contactForm.email.vars.errors is not empty ? 'is-invalid' }}"
+                           aria-describedby="validationServerEmailFeedback">
+                    <div id="validationServerEmailFeedback" class="invalid-feedback">
+                        {{ form_errors(contactForm.email)}}
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                {{ form_label(contactForm.phone, 'Votre téléphone', { 'label_attr': {'class': 'form-label'} }) }}
+                {{ form_widget(contactForm.phone, { 'attr': {'class': 'form-control'} }) }}
+            </div>
+            <div class="mb-3">
+                {{ form_label(contactForm.message, 'Votre message', { 'label_attr': {'class': 'form-label'} }) }}
+                {{ form_widget(contactForm.message, { 'attr': {'class': 'form-control', 'row': '10'} }) }}
+            </div>
+            {{ form_widget(contactForm.submit, { 'attr': {'class': 'btn btn-primary'} }) }}
+            <input type="hidden" id="contact_form__token" name="contact_form[_token]" value="{{ csrf_token('contact_form') }}">
+            {{ form_end(contactForm, {'render_rest': false}) }}
+        </div>
+        <div class="col md-4">
+            <h3>Coordonnées</h3>
+            <address>
+                <h4>Nom de la société</h4>
+                <ul>
+                    <li>3 rue de Trivaux</li>
+                    <li>92190 MEUDON</li>
+                    <li>Tél. <a href="tel:+3390090909">+33 9 90 900 900</a></li>
+                    <li>Horaires d'ouverture</li>
+                </ul>
+            </address>
+        </div>
+    </div>
 {% endblock %}
