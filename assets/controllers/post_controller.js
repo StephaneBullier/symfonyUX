@@ -8,18 +8,12 @@ export default class extends Controller {
     this.loadPost()
   }
 
-  loadPost() {
-    fetch(this.urlValue)
-      .then(response => response.json())
-      .then(posts => {
-        let postsHTML = ''
-        posts.forEach(post => postsHTML += this.postTemplate(post))
-        this.postsTarget.innerHTML = postsHTML
-      })
-  }
-
-  postTemplate(post) {
-    return `<li>${post.title}</li>`
+  async loadPost() {
+    const response = await fetch(this.urlValue)
+    const postsArray = await response.json()
+    let postsHTML = ''
+    await postsArray.forEach(post => postsHTML += `<li>${post.title}</li>`)
+    this.postsTarget.innerHTML = postsHTML
   }
 }
 
