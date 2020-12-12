@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PostController!{% endblock %}
+
+{% block body %}
+    <h2>Liste des articles</h2>
+
+    <div data-controller="post"
+         data-post-url-value="https://jsonplaceholder.typicode.com/posts"
+    >
+        <ul data-post-target="posts"></ul>
+    </div>
+{% endblock %}
