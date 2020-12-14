@@ -13,6 +13,13 @@
          data-animate-history-browsing="data-animate-history-browsing"
     >
         {% include 'header.html.twig' %}
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="flash-{{ label }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
         <main id="swup" role="main" class="container pt-5 mt-5">
         {% block body %}{% endblock %}
         </main>
