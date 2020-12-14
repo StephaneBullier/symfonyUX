@@ -5,12 +5,12 @@ namespace App\Form;
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Image;
+use Symfony\UX\Dropzone\Form\DropzoneType;
 
 class UserFormType extends AbstractType
 {
@@ -24,7 +24,7 @@ class UserFormType extends AbstractType
             ->add('password', PasswordType::class, [
                 'disabled' => true
             ])
-            ->add('photo', FileType::class, [
+            ->add('photo', DropzoneType::class, [
                 'required' => false,
                 'mapped' => false,
                 'constraints' => [

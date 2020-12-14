@@ -1,6 +1,9 @@
 {
     "devDependencies": {
         "@symfony/stimulus-bridge": "^1.1.0",
+        "@symfony/ux-chartjs": "file:vendor/symfony/ux-chartjs/Resources/assets",
+        "@symfony/ux-dropzone": "file:vendor/symfony/ux-dropzone/Resources/assets",
+        "@symfony/ux-swup": "file:vendor/symfony/ux-swup/Resources/assets",
         "@symfony/webpack-encore": "^0.33.0",
         "bootstrap": "^5.0.0-beta1",
         "core-js": "^3.0.0",
@@ -8,9 +11,7 @@
         "sass": "^1.30.0",
         "sass-loader": "^10.1.0",
         "stimulus": "^2.0.0",
-        "webpack-notifier": "^1.6.0",
-        "@symfony/ux-chartjs": "file:vendor/symfony/ux-chartjs/Resources/assets",
-        "@symfony/ux-swup": "file:vendor/symfony/ux-swup/Resources/assets"
+        "webpack-notifier": "^1.6.0"
     },
     "license": "UNLICENSED",
     "private": true,
