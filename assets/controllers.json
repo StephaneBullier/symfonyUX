@@ -6,6 +6,16 @@
                 "webpackMode": "eager"
             }
         },
+        "@symfony/ux-cropperjs": {
+            "cropper": {
+                "enabled": true,
+                "webpackMode": "eager",
+                "autoimport": {
+                    "cropperjs/dist/cropper.min.css": true,
+                    "@symfony/ux-cropperjs/src/style.css": true
+                }
+            }
+        },
         "@symfony/ux-dropzone": {
             "dropzone": {
                 "enabled": true,

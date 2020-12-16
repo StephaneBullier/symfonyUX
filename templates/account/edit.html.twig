@@ -4,11 +4,13 @@
 
 {% block body %}
 <h2>Edition du compte</h2>
+
     {% if app.user.photoFilename %}
         <div class="w-25">
-            <img class="img-fluid" src="{{ asset('uploads/photos/users/'~app.user.photoFilename) }}" alt="">
+            <a href="{{ path('app_crop_image') }}"><img class="img-fluid" src="{{ asset('uploads/photos/users/'~app.user.photoFilename) }}" alt=""></a>
         </div>
     {% endif %}
+
     {{ form_start(userForm) }}
     <div class="mb-3">
         {{ form_label(userForm.email, 'Votre courriel', {'label_attr': { 'class': 'form-label' }}) }}
@@ -23,7 +25,7 @@
     <div class="mb-3">
         {{ form_label(userForm.photo, 'Votre photo de profil', {'label_attr': { 'class': 'form-label' }}) }}
         {{ form_errors(userForm.photo) }}
-        {{ form_widget(userForm.photo, {'attr': { 'class': 'form-control' }}) }}
+        {{ form_widget(userForm.photo) }}
     </div>
     <div class="mb-3">
         {{ form_widget(userForm.submit, {'attr': { 'class': 'btn btn-primary' }}) }}
