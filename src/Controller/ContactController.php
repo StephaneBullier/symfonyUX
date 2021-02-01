@@ -42,7 +42,7 @@ class ContactController extends AbstractController
 
             $mailer->send($email);
 
-            //$this->addFlash('notice', 'Merci de nous avoir contacté. Notre équipe va vous répondre dans les meilleurs délais.');
+            $this->addFlash('success', 'Merci de nous avoir contacté. Notre équipe va vous répondre dans les meilleurs délais.');
 
             return $this->redirectToRoute('home');
         }
