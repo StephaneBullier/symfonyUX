@@ -4,5 +4,8 @@
 
 {% block body %}
     <h1>Test d'utilisation de ChartJS</h1>
-    {{ render_chart(chart) }}
+    {{ render_chart(chart, {
+        'data-controller': 'admin-chartjs',
+        'data-action': 'chartjs:connect->admin-chartjs#onChartConnect'
+    }) }}
 {% endblock %}

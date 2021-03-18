@@ -27,7 +27,7 @@ class ChartController extends AbstractController
                     'borderColor' => 'rgb(255, 99, 132)',
                     'borderCapStyle' => 'round',
                     'borderDash' => [5, 15, 25],
-                    'data' => [0, 10, 5, 2, 20, 30, 45],
+                    'data' => [0, 10, 15, 2, 20, 30, 45],
                 ],
             ],
         ]);
