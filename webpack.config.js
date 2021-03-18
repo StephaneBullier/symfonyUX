@@ -24,6 +24,7 @@ Encore
     })
     .enableSassLoader()
     .enableIntegrityHashes(Encore.isProduction())
+    .enableReactPreset()
 ;
 
 module.exports = Encore.getWebpackConfig();
