@@ -1,5 +1,4 @@
 import { Controller } from 'stimulus';
-import ReactDOM from 'react-dom';
 import React from 'react';
 import FeaturedProduct from '../components/FeaturedProduct';
 
@@ -9,9 +8,11 @@ export default class extends Controller {
   }
 
   connect() {
-    ReactDOM.render(
-      <FeaturedProduct product={this.productValue} />,
-      this.element
-    )
+    import('react-dom').then((ReactDOM) => {
+      ReactDOM.render(
+        <FeaturedProduct product={this.productValue} />,
+        this.element
+      )
+    }).default
   }
 }
