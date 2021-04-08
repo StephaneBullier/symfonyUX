@@ -14,9 +14,11 @@ use Symfony\Component\Routing\Annotation\Route;
 class PostAdminController extends AbstractController
 {
     #[Route('/', name: 'post_admin_index', methods: ['GET'])]
-    public function index(PostRepository $postRepository): Response
+    public function index(PostRepository $postRepository, Request $request): Response
     {
-        return $this->render('post_admin/index.html.twig', [
+        $template = $request->query->get('ajax') ? '_list.html.twig' : 'index.html.twig';
+
+        return $this->render('post_admin/' . $template, [
             'posts' => $postRepository->findAll(),
         ]);
     }
@@ -33,13 +35,26 @@ class PostAdminController extends AbstractController
             $entityManager->persist($post);
             $entityManager->flush();
 
+            if ($request->isXmlHttpRequest()) {
+                return new Response(null, 204);
+            }
+
             return $this->redirectToRoute('post_admin_index');
         }
 
-        return $this->render('post_admin/new.html.twig', [
+        if ($request->get('form') === '1') {
+            $template = 'post_admin/_form.html.twig';
+        } else {
+            $template = 'post_admin/new.html.twig';
+        }
+
+        return $this->render($template, [
             'post' => $post,
             'form' => $form->createView(),
-        ]);
+        ], new Response(
+            null,
+            $form->isSubmitted() && !$form->isValid() ? 422 : 200,
+        ));
     }
 
     #[Route('/{id}', name: 'post_admin_show', methods: ['GET'])]
