@@ -12,8 +12,6 @@
     </head>
     <body
          class="d-flex flex-column h-100"
-         data-controller="@symfony/ux-swup/swup"
-         data-animate-history-browsing="data-animate-history-browsing"
     >
         {% include 'header.html.twig' %}
         {% for label, messages in app.flashes %}
@@ -24,7 +22,7 @@
                 </div>
             {% endfor %}
         {% endfor %}
-        <main id="swup" role="main" class="container pt-5 mt-5">
+        <main role="main" class="container pt-5 mt-5">
         {% block body %}{% endblock %}
         </main>
         {% include 'footer.html.twig' %}

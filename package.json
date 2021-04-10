@@ -6,7 +6,6 @@
         "@symfony/ux-chartjs": "file:vendor/symfony/ux-chartjs/Resources/assets",
         "@symfony/ux-cropperjs": "file:vendor/symfony/ux-cropperjs/Resources/assets",
         "@symfony/ux-dropzone": "file:vendor/symfony/ux-dropzone/Resources/assets",
-        "@symfony/ux-swup": "file:vendor/symfony/ux-swup/Resources/assets",
         "@symfony/webpack-encore": "^1.0.0",
         "bootstrap": "^5.0.0-beta3",
         "core-js": "^3.0.0",
